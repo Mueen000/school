@@ -8,205 +8,133 @@
 <style>
 body{
   margin:0;
-  font-family: 'Segoe UI', Arial, sans-serif;
+  font-family: Arial, sans-serif;
   background:#f4f6f8;
-  color:#333;
 }
 header{
-  background:linear-gradient(135deg,#0b5ed7,#083a8c);
+  background:#0b5ed7;
   color:white;
   text-align:center;
-  padding:25px 15px;
+  padding:20px;
 }
-header h1{margin:0;font-size:26px;}
-header p{margin:5px 0 0;font-size:14px;}
-
-nav{
-  background:#062f6d;
-  display:flex;
-  justify-content:space-around;
-  flex-wrap:wrap;
-  padding:10px 0;
-}
-nav a{
-  color:white;
-  text-decoration:none;
-  font-size:14px;
-  padding:6px 10px;
-}
-
-.section{
+section{
   background:white;
-  margin:12px;
-  padding:18px;
+  margin:15px;
+  padding:15px;
   border-radius:10px;
-  box-shadow:0 2px 6px rgba(0,0,0,0.08);
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
 }
-.section h2{
-  margin-top:0;
-  color:#083a8c;
-  font-size:20px;
-}
-
-.quote{
-  font-style:italic;
-  background:#eef4ff;
-  border-left:4px solid #0b5ed7;
-}
-
-ul{padding-left:18px;}
-
-input,textarea,button{
+h2{color:#083a8c;}
+input,button{
   width:100%;
-  padding:10px;
-  margin-top:8px;
-  font-size:15px;
-  border-radius:6px;
-  border:1px solid #ccc;
+  padding:12px;
+  font-size:16px;
+  margin-top:10px;
 }
-
 button{
   background:#0b5ed7;
   color:white;
   border:none;
-  cursor:pointer;
+  border-radius:6px;
 }
-
+#result{
+  margin-top:15px;
+  font-weight:bold;
+}
 footer{
-  background:#062f6d;
+  background:#083a8c;
   color:white;
   text-align:center;
-  padding:15px;
+  padding:12px;
   font-size:13px;
 }
-small{opacity:0.85;}
 </style>
 </head>
 
 <body>
 
 <header>
-  <h1>درسگاہ سبیل الرسولﷺ</h1>
-  <p>Islamic & Modern Education System</p>
+  <h1>درسگاہ سبیل الرسول</h1>
+  <p>Islamic & Modern Education</p>
 </header>
 
-<nav>
-  <a href="#about">About</a>
-  <a href="#courses">Courses</a>
-  <a href="#results">Results</a>
-  <a href="#notices">Notices</a>
-  <a href="#contact">Contact</a>
-</nav>
-
-<div class="section quote">
-  “Seek knowledge from the cradle to the grave.” — Prophet Muhammad ﷺ
-</div>
-
-<div class="section" id="about">
-  <h2>🏫 About Institute</h2>
-  <p>
-    Darsgah Sabeel-ul-Rasool is committed to providing quality Islamic and
-    modern education, nurturing character, discipline, and academic excellence.
-  </p>
-</div>
-
-<div class="section" id="courses">
-  <h2>📚 Courses Offered</h2>
-  <ul>
-    <li>Foundation i ii iii/ Prep</li>
-    <li>Class 1st to 8th</li>
-    <li>Qur’an with Tajweed</li>
-    <li>Hadith & Fiqh Basics</li>
-    <li>Arabic Language</li>
-    <li>qirat & Moral Education</li>
-  </ul>
-</div>
-
-<div class="section" id="results">
+<section>
   <h2>📊 Student Result Search</h2>
-  <input id="roll" placeholder="Enter Roll Number (e.g. 3DRS2501)">
-  <button onclick="showResult()">Check Result</button>
-  <div id="output" style="margin-top:12px;font-weight:600;"></div>
-</div>
-
-<div class="section" id="notices">
-  <h2>📢 Notices</h2>
-  <ul>
-    <li>Annual results declared</li>
-    <li>Admissions open for new session</li>
-    <li>Parents-teacher meeting every month</li>
-  </ul>
-</div>
-
-<div class="section" id="contact">
-  <h2>📞 Contact Us</h2>
-  <p>
-    📍 Darsgah Sabeel-ul-Rasool, Bandipora<br>
-    📱 Phone / WhatsApp: +91-7006279025,8899238845,9596874688
-  </p>
-
-  <h3>📝 Enquiry Form</h3>
-  <input placeholder="Mohammad nawaz >
-  <input placeholder="8899238845">
-  <textarea placeholder="unite we stand"></textarea>
-  <button>Send Enquiry</button>
-</div>
+  <input id="rollno" placeholder="Enter Roll Number (e.g. 3DRS2501)">
+  <button id="checkBtn">Check Result</button>
+  <div id="result"></div>
+</section>
 
 <footer>
-  © 2026 Darsgah Sabeel-ul-Rasool<br>
-  <small>Website Designed by Mueniverse</small>
+  © 2026 Darsgah Sabeel-ul-Rasool <br>
+  Designed by Mueen
 </footer>
 
 <script>
-function findResult() {
-  const data = {
-    "3DRS2501":"Class 3rd | Ronak Rashid – 543 / 600",
-    "3DRS2502":"Class 3rd | Zainab Maqbool – 536 / 600",
-    "3DRS2503":"Class 3rd | Adeeba Rashid – 536 / 600",
-    "3DRS2504":"Class 3rd | Farhana Rashid – 521 / 600",
-    "3DRS2505":"Class 3rd | Afeefa Fayaz – Absent",
-    "3DRS2506":"Class 3rd | Faheem Fayaz – 406 / 600",
-    "3DRS2507":"Class 3rd | Faizan Yousuf – 422 / 600",
-    "3DRS2508":"Class 3rd | Fardeen Tariq – 374 / 600",
-    "3DRS2509":"Class 3rd | Manazah Yousuf – 503 / 600",
-    "3DRS2510":"Class 3rd | Misbah Bashir – 425 / 600",
-    "3DRS2511":"Class 3rd | Aarizo Mushtaq – Absent",
-    "3DRS2512":"Class 3rd | Urfeena Yousuf – 534 / 600",
-    "3DRS2513":"Class 3rd | Sulaiman Qadir – 356 / 600",
-    "3DRS2514":"Class 3rd | Shahid Khursheed – 320 / 600",
-    "3DRS2515":"Class 3rd | Musaib Farooq – 421 / 600",
-    "3DRS2516":"Class 3rd | Musaib Javaid – 377 / 600",
-    "3DRS2517":"Class 3rd | Dawood Rashid – 344 / 600",
+document.getElementById("checkBtn").addEventListener("click", function(){
 
-    "2DRS2501":"Class 2nd | Salfi Sinan – 503 / 600",
-    "2DRS2502":"Class 2nd | Haroon Rashid – 402 / 600",
-    "2DRS2503":"Class 2nd | Numair Nazir – 444 / 600",
-    "2DRS2504":"Class 2nd | Asma Maqbool – 492 / 600",
-    "2DRS2505":"Class 2nd | Sehna Rashid – 442 / 600",
-    "2DRS2506":"Class 2nd | Hafsa Bilal – 484 / 600",
-    "2DRS2507":"Class 2nd | Hadiya Farooq – 536 / 600",
-    "2DRS2508":"Class 2nd | Nyla Khursheed – 493 / 600",
-    "2DRS2509":"Class 2nd | Jiyad Javid – 535 / 600",
-    "2DRS2510":"Class 2nd | Mahira Gulzar – 458 / 600",
+  var roll = document.getElementById("rollno").value;
+  roll = roll.replace(/\s+/g,'').toUpperCase();
 
-    "1DRS2501":"Class 1st | Nuzhat Karim – 487 / 600",
-    "1DRS2502":"Class 1st | Zarnain Mudasir – 523 / 600",
-    "1DRS2503":"Class 1st | Ayman Fayaz – 524 / 600",
-    "1DRS2504":"Class 1st | Abu Baqar – 538 / 600",
-    "1DRS2505":"Class 1st | Suhaib Altaf – 554 / 600",
-    "1DRS2506":"Class 1st | Hanan Tanveer – 566 / 600",
-    "1DRS2507":"Class 1st | Mustaqeem – 432 / 600",
-    "1DRS2508":"Class 1st | Haziq Farooq – 443 / 600",
-    "1DRS2509":"Class 1st | Zia Gulzar – 509 / 600",
-    "1DRS2510":"Class 1st | Mutaiba Majeed – Absent"
+  var results = {
+
+  /* CLASS 3rd */
+  "3DRS2501":"Class 3rd | Ronak Rashid | 543 / 600",
+  "3DRS2502":"Class 3rd | Zainab Maqbool | 536 / 600",
+  "3DRS2503":"Class 3rd | Adeeba Rashid | 536 / 600",
+  "3DRS2504":"Class 3rd | Farhana Rashid | 521 / 600",
+  "3DRS2505":"Class 3rd | Afeefa Fayaz | Absent",
+  "3DRS2506":"Class 3rd | Faheem Fayaz | 406 / 600",
+  "3DRS2507":"Class 3rd | Faizan Yousuf | 422 / 600",
+  "3DRS2508":"Class 3rd | Fardeen Tariq | 374 / 600",
+  "3DRS2509":"Class 3rd | Manazah Yousuf | 503 / 600",
+  "3DRS2510":"Class 3rd | Misbah Bashir | 425 / 600",
+  "3DRS2511":"Class 3rd | Aarizo Mushtaq | Absent",
+  "3DRS2512":"Class 3rd | Urfeena Yousuf | 534 / 600",
+  "3DRS2513":"Class 3rd | Sulaiman Qadir | 356 / 600",
+  "3DRS2514":"Class 3rd | Shahid Khursheed | 320 / 600",
+  "3DRS2515":"Class 3rd | Musaib Farooq | 421 / 600",
+  "3DRS2516":"Class 3rd | Musaib Javaid | 377 / 600",
+  "3DRS2517":"Class 3rd | Dawood Rashid | 344 / 600",
+
+  /* CLASS 2nd */
+  "2DRS2501":"Class 2nd | Salfi Sinan | 503 / 600",
+  "2DRS2502":"Class 2nd | Haroon Rashid | 402 / 600",
+  "2DRS2503":"Class 2nd | Numair Nazir | 444 / 600",
+  "2DRS2504":"Class 2nd | Asma Maqbool | 492 / 600",
+  "2DRS2505":"Class 2nd | Sehna Rashid | 442 / 600",
+  "2DRS2506":"Class 2nd | Hafsa Bilal | 484 / 600",
+  "2DRS2507":"Class 2nd | Hadiya Farooq | 536 / 600",
+  "2DRS2508":"Class 2nd | Nyla Khursheed | 493 / 600",
+  "2DRS2509":"Class 2nd | Jiyad Javid | 535 / 600",
+  "2DRS2510":"Class 2nd | Mahira Gulzar | 458 / 600",
+
+  /* CLASS 1st */
+  "1DRS2501":"Class 1st | Nuzhat Karim | 487 / 600",
+  "1DRS2502":"Class 1st | Zarnain Mudasir | 523 / 600",
+  "1DRS2503":"Class 1st | Ayman Fayaz | 524 / 600",
+  "1DRS2504":"Class 1st | Abu Baqar | 538 / 600",
+  "1DRS2505":"Class 1st | Suhaib Altaf | 554 / 600",
+  "1DRS2506":"Class 1st | Hanan Tanveer | 566 / 600",
+  "1DRS2507":"Class 1st | Mustaqeem | 432 / 600",
+  "1DRS2508":"Class 1st | Haziq Farooq | 443 / 600",
+  "1DRS2509":"Class 1st | Zia Gulzar | 509 / 600",
+  "1DRS2510":"Class 1st | Mutaiba Majeed | Absent"
+
   };
 
-  const r=document.getElementById("roll").value.replace(/\s+/g,'').toUpperCase();
-  const box = document.getElementById("resultBox");
+  var box = document.getElementById("result");
 
-  box.innerHTML = data[roll]
-    ? "<b>Result:</b><br>" + data[roll]
-    : "<span style='color:red;'>❌ Roll number not found</span>";
-}
+  if(results[roll]){
+    box.innerHTML = "✅ " + results[roll];
+    box.style.color = "green";
+  }else{
+    box.innerHTML = "❌ Result not found. Please check roll number.";
+    box.style.color = "red";
+  }
+
+});
 </script>
 
+</body>
+</html>
