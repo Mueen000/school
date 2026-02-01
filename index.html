@@ -109,62 +109,60 @@
 </footer>
 
 <script>
-const results = {
-  // Class 3rd
-  "3DRS2501": "Class 3rd | Ronak Rashid – 543 / 600",
-  "3DRS2502": "Class 3rd | Zainab Maqbool – 536 / 600",
-  "3DRS2503": "Class 3rd | Adeeba Rashid – 536 / 600",
-  "3DRS2504": "Class 3rd | Farhana Rashid – 521 / 600",
-  "3DRS2505": "Class 3rd | Afeefa Fayaz – Absent",
-  "3DRS2506": "Class 3rd | Faheem Fayaz – 406 / 600",
-  "3DRS2507": "Class 3rd | Faizan Yousuf – 422 / 600",
-  "3DRS2508": "Class 3rd | Fardeen Tariq – 374 / 600",
-  "3DRS2509": "Class 3rd | Manazah Yousuf – 503 / 600",
-  "3DRS2510": "Class 3rd | Misbah Bashir – 425 / 600",
-  "3DRS2511": "Class 3rd | Aarizo Mushtaq – Absent",
-  "3DRS2512": "Class 3rd | Urfeena Yousuf – 534 / 600",
-  "3DRS2513": "Class 3rd | Sulaiman Qadir – 356 / 600",
-  "3DRS2514": "Class 3rd | Shahid Khursheed – 320 / 600",
-  "3DRS2515": "Class 3rd | Musaib Farooq – 421 / 600",
-  "3DRS2516": "Class 3rd | Musaib Javaid – 377 / 600",
-  "3DRS2517": "Class 3rd | Dawood Rashid – 344 / 600",
-
-  // Class 2nd
-  "2DRS2501": "Class 2nd | Salfi Sinan – 503 / 600",
-  "2DRS2502": "Class 2nd | Haroon Rashid – 402 / 600",
-  "2DRS2503": "Class 2nd | Numair Nazir – 444 / 600",
-  "2DRS2504": "Class 2nd | Asma Maqbool – 492 / 600",
-  "2DRS2505": "Class 2nd | Sehna Rashid – 442 / 600",
-  "2DRS2506": "Class 2nd | Hafsa Bilal – 484 / 600",
-  "2DRS2507": "Class 2nd | Hadiya Farooq – 536 / 600",
-  "2DRS2508": "Class 2nd | Nyla Khursheed – 493 / 600",
-  "2DRS2509": "Class 2nd | Jiyad Javid – 535 / 600",
-  "2DRS2510": "Class 2nd | Mahira Gulzar – 458 / 600",
-
-  // Class 1st
-  "1DRS2501": "Class 1st | Nuzhat Karim – 487 / 600",
-  "1DRS2502": "Class 1st | Zarnain Mudasir – 523 / 600",
-  "1DRS2503": "Class 1st | Ayman Fayaz – 524 / 600",
-  "1DRS2504": "Class 1st | Abu Baqar – 538 / 600",
-  "1DRS2505": "Class 1st | Suhaib Altaf – 554 / 600",
-  "1DRS2506": "Class 1st | Hanan Tanveer – 566 / 600",
-  "1DRS2507": "Class 1st | Mustaqeem – 432 / 600",
-  "1DRS2508": "Class 1st | Haziq Farooq – 443 / 600",
-  "1DRS2509": "Class 1st | Zia Gulzar – 509 / 600",
-  "1DRS2510": "Class 1st | Mutaiba Majeed – Absent"
-};
-
 function findResult() {
-  const roll = document.getElementById("rollInput").value.toUpperCase().trim();
+  const data = {
+    "3DRS2501":"Class 3rd | Ronak Rashid – 543 / 600",
+    "3DRS2502":"Class 3rd | Zainab Maqbool – 536 / 600",
+    "3DRS2503":"Class 3rd | Adeeba Rashid – 536 / 600",
+    "3DRS2504":"Class 3rd | Farhana Rashid – 521 / 600",
+    "3DRS2505":"Class 3rd | Afeefa Fayaz – Absent",
+    "3DRS2506":"Class 3rd | Faheem Fayaz – 406 / 600",
+    "3DRS2507":"Class 3rd | Faizan Yousuf – 422 / 600",
+    "3DRS2508":"Class 3rd | Fardeen Tariq – 374 / 600",
+    "3DRS2509":"Class 3rd | Manazah Yousuf – 503 / 600",
+    "3DRS2510":"Class 3rd | Misbah Bashir – 425 / 600",
+    "3DRS2511":"Class 3rd | Aarizo Mushtaq – Absent",
+    "3DRS2512":"Class 3rd | Urfeena Yousuf – 534 / 600",
+    "3DRS2513":"Class 3rd | Sulaiman Qadir – 356 / 600",
+    "3DRS2514":"Class 3rd | Shahid Khursheed – 320 / 600",
+    "3DRS2515":"Class 3rd | Musaib Farooq – 421 / 600",
+    "3DRS2516":"Class 3rd | Musaib Javaid – 377 / 600",
+    "3DRS2517":"Class 3rd | Dawood Rashid – 344 / 600",
+
+    "2DRS2501":"Class 2nd | Salfi Sinan – 503 / 600",
+    "2DRS2502":"Class 2nd | Haroon Rashid – 402 / 600",
+    "2DRS2503":"Class 2nd | Numair Nazir – 444 / 600",
+    "2DRS2504":"Class 2nd | Asma Maqbool – 492 / 600",
+    "2DRS2505":"Class 2nd | Sehna Rashid – 442 / 600",
+    "2DRS2506":"Class 2nd | Hafsa Bilal – 484 / 600",
+    "2DRS2507":"Class 2nd | Hadiya Farooq – 536 / 600",
+    "2DRS2508":"Class 2nd | Nyla Khursheed – 493 / 600",
+    "2DRS2509":"Class 2nd | Jiyad Javid – 535 / 600",
+    "2DRS2510":"Class 2nd | Mahira Gulzar – 458 / 600",
+
+    "1DRS2501":"Class 1st | Nuzhat Karim – 487 / 600",
+    "1DRS2502":"Class 1st | Zarnain Mudasir – 523 / 600",
+    "1DRS2503":"Class 1st | Ayman Fayaz – 524 / 600",
+    "1DRS2504":"Class 1st | Abu Baqar – 538 / 600",
+    "1DRS2505":"Class 1st | Suhaib Altaf – 554 / 600",
+    "1DRS2506":"Class 1st | Hanan Tanveer – 566 / 600",
+    "1DRS2507":"Class 1st | Mustaqeem – 432 / 600",
+    "1DRS2508":"Class 1st | Haziq Farooq – 443 / 600",
+    "1DRS2509":"Class 1st | Zia Gulzar – 509 / 600",
+    "1DRS2510":"Class 1st | Mutaiba Majeed – Absent"
+  };
+
+  const roll = document.getElementById("rollInput").value.trim().toUpperCase();
   const box = document.getElementById("resultBox");
 
-  if (results[roll]) {
-    box.innerHTML = "<b>Result:</b><br>" + results[roll];
-  } else {
-    box.innerHTML = "<span style='color:red;'>❌ Roll number not found</span>";
-  }
+  box.innerHTML = data[roll]
+    ? "<b>Result:</b><br>" + data[roll]
+    : "<span style='color:red;'>❌ Roll number not found</span>";
 }
+</script>
+
 </script>
 
 </body>
 </html>
+
