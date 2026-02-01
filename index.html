@@ -201,7 +201,7 @@ function findResult() {
     "1DRS2510":"Class 1st | Mutaiba Majeed – Absent"
   };
 
-  const roll = document.getElementById("rollInput").value.trim().toUpperCase();
+  const r=document.getElementById("roll").value.replace(/\s+/g,'').toUpperCase();
   const box = document.getElementById("resultBox");
 
   box.innerHTML = data[roll]
@@ -209,3 +209,4 @@ function findResult() {
     : "<span style='color:red;'>❌ Roll number not found</span>";
 }
 </script>
+
