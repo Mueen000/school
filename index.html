@@ -1,111 +1,160 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Darsgah Sabeel-ul-Rasool</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Darsgah Sabeel-ul-Rasool</title>
 
-  <style>
-    body{
-      margin:0;
-      font-family: Arial, sans-serif;
-      background:#f5f5f5;
-    }
-    header{
-      background:#0b5ed7;
-      color:white;
-      padding:15px;
-      text-align:center;
-    }
-    nav{
-      background:#083a8c;
-      display:flex;
-      justify-content:space-around;
-      padding:10px 0;
-      flex-wrap:wrap;
-    }
-    nav a{
-      color:white;
-      text-decoration:none;
-      font-size:14px;
-      padding:5px 10px;
-    }
-    .hero{
-      background:white;
-      padding:20px;
-      text-align:center;
-    }
-    .hero h2{
-      margin:10px 0;
-      color:#0b5ed7;
-    }
-    .section{
-      background:white;
-      margin:10px;
-      padding:15px;
-      border-radius:8px;
-    }
-    .section h3{
-      margin-top:0;
-      color:#083a8c;
-    }
-    footer{
-      background:#0b5ed7;
-      color:white;
-      text-align:center;
-      padding:10px;
-      font-size:13px;
-    }
-    input, button{
-      border-radius:5px;
-      border:1px solid #ccc;
-    }
-  </style>
+<style>
+body{
+  margin:0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background:#f4f6f8;
+  color:#333;
+}
+header{
+  background:linear-gradient(135deg,#0b5ed7,#083a8c);
+  color:white;
+  text-align:center;
+  padding:25px 15px;
+}
+header h1{margin:0;font-size:26px;}
+header p{margin:5px 0 0;font-size:14px;}
+
+nav{
+  background:#062f6d;
+  display:flex;
+  justify-content:space-around;
+  flex-wrap:wrap;
+  padding:10px 0;
+}
+nav a{
+  color:white;
+  text-decoration:none;
+  font-size:14px;
+  padding:6px 10px;
+}
+
+.section{
+  background:white;
+  margin:12px;
+  padding:18px;
+  border-radius:10px;
+  box-shadow:0 2px 6px rgba(0,0,0,0.08);
+}
+.section h2{
+  margin-top:0;
+  color:#083a8c;
+  font-size:20px;
+}
+
+.quote{
+  font-style:italic;
+  background:#eef4ff;
+  border-left:4px solid #0b5ed7;
+}
+
+ul{padding-left:18px;}
+
+input,textarea,button{
+  width:100%;
+  padding:10px;
+  margin-top:8px;
+  font-size:15px;
+  border-radius:6px;
+  border:1px solid #ccc;
+}
+
+button{
+  background:#0b5ed7;
+  color:white;
+  border:none;
+  cursor:pointer;
+}
+
+footer{
+  background:#062f6d;
+  color:white;
+  text-align:center;
+  padding:15px;
+  font-size:13px;
+}
+small{opacity:0.85;}
+</style>
 </head>
 
 <body>
 
 <header>
-  <h1>درسگاہ سبیل الرسول</h1>
-  <p>Islamic & Modern Education</p>
+  <h1>درسگاہ سبیل الرسولﷺ</h1>
+  <p>Islamic & Modern Education System</p>
 </header>
 
 <nav>
-  <a href="#">Home</a>
+  <a href="#about">About</a>
+  <a href="#courses">Courses</a>
   <a href="#results">Results</a>
-  <a href="#">Courses</a>
-  <a href="#">About</a>
-  <a href="#">Contact</a>
+  <a href="#notices">Notices</a>
+  <a href="#contact">Contact</a>
 </nav>
 
-<div class="hero">
-  <h2>Welcome to Our Institute</h2>
-  <p>Quality education with Islamic values</p>
+<div class="section quote">
+  “Seek knowledge from the cradle to the grave.” — Prophet Muhammad ﷺ
 </div>
 
-<div class="section">
-  <h3>📚 Our Courses</h3>
-  <p>Qur’an, Hadith, Fiqh, Arabic, Tajweed, qirat</p>
+<div class="section" id="about">
+  <h2>🏫 About Institute</h2>
+  <p>
+    Darsgah Sabeel-ul-Rasool is committed to providing quality Islamic and
+    modern education, nurturing character, discipline, and academic excellence.
+  </p>
 </div>
 
-<!-- RESULT SECTION START -->
+<div class="section" id="courses">
+  <h2>📚 Courses Offered</h2>
+  <ul>
+    <li>Foundation i ii iii/ Prep</li>
+    <li>Class 1st to 8th</li>
+    <li>Qur’an with Tajweed</li>
+    <li>Hadith & Fiqh Basics</li>
+    <li>Arabic Language</li>
+    <li>qirat & Moral Education</li>
+  </ul>
+</div>
+
 <div class="section" id="results">
-  <h3>🔍 Check Your Result</h3>
-
-  <input type="text" id="rollInput" placeholder="Enter Roll Number"
-    style="width:100%; padding:10px; font-size:16px; margin-bottom:10px;">
-
-  <button onclick="findResult()"
-    style="width:100%; padding:10px; font-size:16px; background:#0b5ed7; color:white; border:none;">
-    Search Result
-  </button>
-
-  <div id="resultBox" style="margin-top:15px; font-size:15px;"></div>
+  <h2>📊 Student Result Search</h2>
+  <input id="roll" placeholder="Enter Roll Number (e.g. 3DRS2501)">
+  <button onclick="showResult()">Check Result</button>
+  <div id="output" style="margin-top:12px;font-weight:600;"></div>
 </div>
-<!-- RESULT SECTION END -->
+
+<div class="section" id="notices">
+  <h2>📢 Notices</h2>
+  <ul>
+    <li>Annual results declared</li>
+    <li>Admissions open for new session</li>
+    <li>Parents-teacher meeting every month</li>
+  </ul>
+</div>
+
+<div class="section" id="contact">
+  <h2>📞 Contact Us</h2>
+  <p>
+    📍 Darsgah Sabeel-ul-Rasool, Bandipora<br>
+    📱 Phone / WhatsApp: +91-7006279025,8899238845,9596874688
+  </p>
+
+  <h3>📝 Enquiry Form</h3>
+  <input placeholder="Mohammad nawaz >
+  <input placeholder="8899238845">
+  <textarea placeholder="unite we stand"></textarea>
+  <button>Send Enquiry</button>
+</div>
 
 <footer>
-  © 2026 Darsgah Sabeel-ul-Rasool
+  © 2026 Darsgah Sabeel-ul-Rasool<br>
+  <small>Website Designed by Mueniverse</small>
 </footer>
 
 <script>
@@ -160,9 +209,3 @@ function findResult() {
     : "<span style='color:red;'>❌ Roll number not found</span>";
 }
 </script>
-
-</script>
-
-</body>
-</html>
-
