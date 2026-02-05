@@ -180,3 +180,36 @@ function findResult(){
 
 </body>
 </html>
+<!-- UNIVERSAL MOBILE RESULT FIX (ADD ONLY) -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+
+  /* Auto-scroll to result section if roll number is submitted */
+  const buttons = document.querySelectorAll("button");
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      const result = document.querySelector("#result, #result-section, .result");
+      if (result) {
+        setTimeout(() => {
+          result.scrollIntoView({ behavior: "smooth" });
+        }, 300);
+      }
+    });
+  });
+
+  /* Mobile input safety for roll numbers */
+  document.querySelectorAll("input").forEach(input => {
+    if (input.type === "number") {
+      input.type = "text";
+      input.setAttribute("inputmode", "numeric");
+    }
+  });
+
+  /* Fallback message if JS partially fails on mobile */
+  window.onerror = function () {
+    alert("If result is not visible, please refresh once or use Chrome browser.");
+  };
+
+});
+</script>
+<!-- END FIX -->
