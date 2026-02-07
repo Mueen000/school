@@ -1,215 +1,58 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Darsgah Sabeel ul Rasool – Result Portal</title>
+<!-- ONLINE STUDENT REGISTRATION FORM START -->
+<section id="registration" style="padding:30px;background:#f7f7f7;">
+  <h2 style="text-align:center;color:#1b5e20;">Student Online Registration</h2>
+  <p style="text-align:center;">Fill the form carefully. All fields are mandatory.</p>
 
-<style>
-*{box-sizing:border-box}
-body{margin:0;font-family:Segoe UI,Arial;background:#f4f6f8;color:#333}
-header{background:linear-gradient(135deg,#0b6e4f,#118a63);color:#fff;padding:22px;text-align:center}
-nav{background:#fff;display:flex;justify-content:center;gap:18px;padding:10px;box-shadow:0 2px 6px rgba(0,0,0,.1)}
-nav a{text-decoration:none;color:#0b6e4f;font-weight:600}
-section{max-width:1100px;margin:auto;padding:20px 15px}
-.card{background:#fff;padding:20px;border-radius:8px;box-shadow:0 3px 10px rgba(0,0,0,.08);margin-bottom:20px}
-.quote{text-align:center;font-style:italic;color:#0b6e4f;margin-top:15px}
-input,button{width:100%;padding:12px;margin-top:10px;font-size:16px}
-button{background:#0b6e4f;color:#fff;border:none;border-radius:5px}
-table{width:100%;border-collapse:collapse;margin-top:15px}
-th,td{border:1px solid #ccc;padding:8px;text-align:center}
-footer{background:#0b6e4f;color:#fff;text-align:center;padding:12px;font-size:14px}
-</style>
-</head>
+  <form action="https://formsubmit.co/mueen4333@gmail.com" method="POST"
+        style="max-width:500px;margin:auto;background:#ffffff;padding:20px;border-radius:10px;box-shadow:0 0 10px rgba(0,0,0,0.1);">
 
-<body>
+    <!-- Security -->
+    <input type="hidden" name="_captcha" value="false">
+    <input type="hidden" name="_template" value="table">
 
-<header>
-<h1>درسگاہ سبیل الرسول</h1>
-<p>Islamic Education • Discipline • Character</p>
-</header>
+    <label>Student Name</label>
+    <input type="text" name="Student Name" required
+           style="width:100%;padding:10px;margin-bottom:10px;">
 
-<nav>
-<a href="#home">Home</a>
-<a href="#results">Results</a>
-<a href="#contact">Contact</a>
-</nav>
+    <label>Father's Name</label>
+    <input type="text" name="Father Name" required
+           style="width:100%;padding:10px;margin-bottom:10px;">
 
-<section id="home">
-<div class="card">
-<h2>Welcome</h2>
-<p>Darsgah Sabeel ul Rasool provides Islamic education with focus on Qur’an, Sunnah, discipline and character building.</p>
-<div class="quote">
-“The best among you are those who learn the Qur’an and teach it.” — Prophet Muhammad ﷺ
-</div>
-</div>
+    <label>Date of Birth</label>
+    <input type="date" name="DOB" required
+           style="width:100%;padding:10px;margin-bottom:10px;">
+
+    <label>Class</label>
+    <select name="Class" required
+            style="width:100%;padding:10px;margin-bottom:10px;">
+      <option value="">Select Class</option>
+      <option>5th</option>
+      <option>6th</option>
+      <option>7th</option>
+      <option>8th</option>
+      <option>9th</option>
+      <option>10th</option>
+      <option>11th</option>
+      <option>12th</option>
+    </select>
+
+    <label>Gender</label><br>
+    <input type="radio" name="Gender" value="Male" required> Male
+    <input type="radio" name="Gender" value="Female"> Female
+    <br><br>
+
+    <label>Mobile Number</label>
+    <input type="tel" name="Mobile" required
+           style="width:100%;padding:10px;margin-bottom:10px;">
+
+    <label>Address</label>
+    <textarea name="Address" rows="3" required
+              style="width:100%;padding:10px;margin-bottom:10px;"></textarea>
+
+    <button type="submit"
+            style="width:100%;padding:12px;background:#1b5e20;color:white;border:none;font-size:16px;border-radius:5px;">
+      Submit Registration
+    </button>
+  </form>
 </section>
-
-<section id="results">
-<div class="card">
-<h2>Student Result Portal</h2>
-<p>Enter your roll number to view your marksheet</p>
-
-<input id="roll" placeholder="Enter Roll Number (e.g. 3DRS2501)">
-<button onclick="findResult()">Check Result</button>
-
-<div id="output"></div>
-</div>
-</section>
-
-<section id="contact">
-<div class="card">
-<h2>Contact</h2>
-<p>Darsgah Sabeel ul Rasool, Bandipora</p>
-<p>Email: info@sabeelulrasool.edu</p>
-</div>
-</section>
-
-<footer>
-Designed by Moin • © 2026
-</footer>
-
-<script>
-const results = {
-
-/* ================= CLASS 3RD ================= */
-"3DRS2501":{name:"RONAK RASHID",class:"3rd",subjects:["Hifz","Tajweed","Arbaeen","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[85,100,93,80,90,95],total:"543 / 600"},
-"3DRS2502":{name:"ZAINAB MAQBOOL",class:"3rd",subjects:["Hifz","Tajweed","Arbaeen","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[65,100,92,88,96,95],total:"536 / 600"},
-"3DRS2503":{name:"ADEEBA RASHID",class:"3rd",subjects:["Hifz","Tajweed","Arbaeen","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[90,93,89,96,85,83],total:"536 / 600"},
-"3DRS2504":{name:"FARHANA RASHID",class:"3rd",subjects:["Hifz","Tajweed","Arbaeen","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[80,96,89,79,80,97],total:"521 / 600"},
-"3DRS2505":{name:"AFEEFA FAYAZ",class:"3rd",subjects:["Hifz","Tajweed","Arbaeen","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[0,0,0,0,0,96],total:"96 / 600"},
-"3DRS2506":{name:"FAHEEM FAYAZ",class:"3rd",subjects:["Hifz","Tajweed","Arbaeen","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[75,54,70,75,45,87],total:"406 / 600"},
-"3DRS2507":{name:"FAIZAN YOUSUF",class:"3rd",subjects:["Hifz","Tajweed","Arbaeen","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[70,51,55,80,75,91],total:"422 / 600"},
-"3DRS2508":{name:"FARDEEN TARIQ",class:"3rd",subjects:["Hifz","Tajweed","Arbaeen","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[70,47,50,77,40,90],total:"374 / 600"},
-"3DRS2509":{name:"MANAZAH YOUSUF",class:"3rd",subjects:["Hifz","Tajweed","Arbaeen","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[60,98,93,87,85,80],total:"503 / 600"},
-"3DRS2510":{name:"MISBAH BASHIR",class:"3rd",subjects:["Hifz","Tajweed","Arbaeen","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[90,75,70,80,65,85],total:"465 / 600"},
-"3DRS2511":{name:"AARIZO MUSHTAQ",class:"3rd",subjects:["Hifz","Tajweed","Arbaeen","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[0,0,0,0,0,70],total:"70 / 600"},
-"3DRS2512":{name:"URFEENA YOUSUF",class:"3rd",subjects:["Hifz","Tajweed","Arbaeen","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[100,100,99,80,90,65],total:"534 / 600"},
-"3DRS2513":{name:"SULAIMAN QADIR",class:"3rd",subjects:["Hifz","Tajweed","Arbaeen","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[60,40,45,78,46,87],total:"356 / 600"},
-"3DRS2514":{name:"SHAHID KHURSHEED",class:"3rd",subjects:["Hifz","Tajweed","Arbaeen","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[65,40,45,70,40,60],total:"320 / 600"},
-"3DRS2515":{name:"MUSAIB FAROOQ",class:"3rd",subjects:["Hifz","Tajweed","Arbaeen","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[70,40,91,80,80,60],total:"421 / 600"},
-"3DRS2516":{name:"MUSAIB JAVAID",class:"3rd",subjects:["Hifz","Tajweed","Arbaeen","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[70,40,85,72,50,60],total:"377 / 600"},
-"3DRS2517":{name:"DAWOOD RASHID",class:"3rd",subjects:["Hifz","Tajweed","Arbaeen","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[70,40,64,70,40,60],total:"344 / 600"},
-
-/* ================= CLASS 2ND ================= */
-"2DRS2501":{name:"SALFI SINAN",class:"2nd",subjects:["Hifz","Tajweed","Guldasta Islam","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[70,61,93,95,95,89],total:"503 / 600"},
-"2DRS2502":{name:"HAROON RASHID",class:"2nd",subjects:["Hifz","Tajweed","Guldasta Islam","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[60,49,70,78,60,85],total:"402 / 600"},
-"2DRS2503":{name:"NUMAIR NAZIR",class:"2nd",subjects:["Hifz","Tajweed","Guldasta Islam","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[65,48,84,78,85,84],total:"444 / 600"},
-"2DRS2504":{name:"ASMA MAQBOOL",class:"2nd",subjects:["Hifz","Tajweed","Guldasta Islam","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[65,70,93,81,88,95],total:"492 / 600"},
-"2DRS2505":{name:"SEHNA RASHID",class:"2nd",subjects:["Hifz","Tajweed","Guldasta Islam","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[55,61,84,75,75,92],total:"442 / 600"},
-"2DRS2506":{name:"HAFSA BILAL",class:"2nd",subjects:["Hifz","Tajweed","Guldasta Islam","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[60,69,94,87,80,94],total:"484 / 600"},
-"2DRS2507":{name:"HADIYA FAROOQ",class:"2nd",subjects:["Hifz","Tajweed","Guldasta Islam","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[65,99,93,88,95,96],total:"536 / 600"},
-"2DRS2508":{name:"NYLA KHURSHEED",class:"2nd",subjects:["Hifz","Tajweed","Guldasta Islam","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[80,69,92,87,75,90],total:"493 / 600"},
-"2DRS2509":{name:"JIYAD JAVID",class:"2nd",subjects:["Hifz","Tajweed","Guldasta Islam","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[95,67,98,88,90,97],total:"535 / 600"},
-"2DRS2510":{name:"MAHIRA GULZAR",class:"2nd",subjects:["Hifz","Tajweed","Guldasta Islam","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[65,62,94,88,55,94],total:"458 / 600"},
-
-/* ================= CLASS 1ST ================= */
-"1DRS2501":{name:"NUZHAT KARIM",class:"1st",subjects:["Hifz","Tajweed","Guldasta Islam","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[90,71,80,70,76,100],total:"487 / 600"},
-"1DRS2502":{name:"ZARNAIN MUDASIR",class:"1st",subjects:["Hifz","Tajweed","Guldasta Islam","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[90,90,86,78,86,93],total:"523 / 600"},
-"1DRS2503":{name:"AYMAN FAYAZ",class:"1st",subjects:["Hifz","Tajweed","Guldasta Islam","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[93,90,88,76,80,97],total:"524 / 600"},
-"1DRS2504":{name:"ABU BAQAR",class:"1st",subjects:["Hifz","Tajweed","Guldasta Islam","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[94,95,90,78,90,91],total:"538 / 600"},
-"1DRS2505":{name:"SUHAIB ALTAF",class:"1st",subjects:["Hifz","Tajweed","Guldasta Islam","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[96,90,94,76,100,98],total:"554 / 600"},
-"1DRS2506":{name:"HANAN TANVEER",class:"1st",subjects:["Hifz","Tajweed","Guldasta Islam","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[100,95,99,88,90,94],total:"566 / 600"},
-"1DRS2507":{name:"MUSTAQEEM",class:"1st",subjects:["Hifz","Tajweed","Guldasta Islam","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[96,48,78,69,48,93],total:"432 / 600"},
-"1DRS2508":{name:"HAZIQ FAROOQ",class:"1st",subjects:["Hifz","Tajweed","Guldasta Islam","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[95,49,85,70,48,96],total:"443 / 600"},
-"1DRS2509":{name:"ZIA GULZAR",class:"1st",subjects:["Hifz","Tajweed","Guldasta Islam","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[100,80,95,70,70,94],total:"509 / 600"},
-"1DRS2510":{name:"MUTAIBA MAJEED",class:"1st",subjects:["Hifz","Tajweed","Guldasta Islam","Aadabe Zindagi","Islamic Knowledge","Attendance / Character"],marks:[0,0,0,0,0,90],total:"90 / 600"},
-
-/* ================= FOUNDATION (UDRS + LDRS) ================= */
-"UDRS2501":{name:"RUMAN BILAL",class:"Foundation",subjects:["Qaida","Nazera","Dua/Hadith","Islamic Knowledge","Attendance / Character"],marks:[0,0,0,0,80],total:"80 / 600"},
-"UDRS2502":{name:"AYSHIA",class:"Foundation",subjects:["Qaida","Nazera","Dua/Hadith","Islamic Knowledge","Attendance / Character"],marks:[100,95,95,93,92],total:"569 / 600"},
-"UDRS2503":{name:"AYZA ZAHOOR",class:"Foundation",subjects:["Qaida","Nazera","Dua/Hadith","Islamic Knowledge","Attendance / Character"],marks:[90,65,95,88,90],total:"520 / 600"},
-"UDRS2504":{name:"ZAINAB RASHID",class:"Foundation",subjects:["Qaida","Nazera","Dua/Hadith","Islamic Knowledge","Attendance / Character"],marks:[85,85,96,90,92],total:"541 / 600"},
-"UDRS2505":{name:"ABEERAH",class:"Foundation",subjects:["Qaida","Nazera","Dua/Hadith","Islamic Knowledge","Attendance / Character"],marks:[85,96,100,95,97],total:"571 / 600"},
-"UDRS2506":{name:"IMAD TANVEER",class:"Foundation",subjects:["Qaida","Nazera","Dua/Hadith","Islamic Knowledge","Attendance / Character"],marks:[95,80,94,96,93],total:"553 / 600"},
-"UDRS2507":{name:"MOHMINAH",class:"Foundation",subjects:["Qaida","Nazera","Dua/Hadith","Islamic Knowledge","Attendance / Character"],marks:[0,0,0,0,80],total:"80 / 600"},
-"UDRS2508":{name:"AYRA RIYAZ",class:"Foundation",subjects:["Qaida","Nazera","Dua/Hadith","Islamic Knowledge","Attendance / Character"],marks:[100,80,40,90,80],total:"455 / 600"},
-
-"LDRS2501":{name:"NIGHA FAROOQ",class:"Foundation",subjects:["Qaida","Nazera","Dua/Hadith","Islamic Knowledge","Attendance / Character"],marks:[60,90,91,92,60],total:"485 / 600"},
-"LDRS2502":{name:"HARIS NAWAZ",class:"Foundation",subjects:["Qaida","Nazera","Dua/Hadith","Islamic Knowledge","Attendance / Character"],marks:[62,100,70,92,83],total:"488 / 600"},
-"LDRS2503":{name:"INAYATULLAH",class:"Foundation",subjects:["Qaida","Nazera","Dua/Hadith","Islamic Knowledge","Attendance / Character"],marks:[60,90,58,80,86],total:"464 / 600"},
-"LDRS2504":{name:"HADIYA RASHID",class:"Foundation",subjects:["Qaida","Nazera","Dua/Hadith","Islamic Knowledge","Attendance / Character"],marks:[60,65,59,85,80],total:"421 / 600"},
-"LDRS2505":{name:"NUBAID NAZIR",class:"Foundation",subjects:["Qaida","Nazera","Dua/Hadith","Islamic Knowledge","Attendance / Character"],marks:[60,80,92,85,82],total:"487 / 600"},
-"LDRS2506":{name:"AQSA MUDASIR",class:"Foundation",subjects:["Qaida","Nazera","Dua/Hadith","Islamic Knowledge","Attendance / Character"],marks:[58,70,60,85,72],total:"425 / 600"},
-"LDRS2507":{name:"JUNAID MUSHTAQ",class:"Foundation",subjects:["Qaida","Nazera","Dua/Hadith","Islamic Knowledge","Attendance / Character"],marks:[100,85,60,85,65],total:"475 / 600"},
-"LDRS2508":{name:"ZAINAB RAHED",class:"Foundation",subjects:["Qaida","Nazera","Dua/Hadith","Islamic Knowledge","Attendance / Character"],marks:[88,82,50,88,79],total:"456 / 600"},
-
-/* ================= NURSERY ================= */
-"N2501":{name:"HAMDANA IMTIYAZ",class:"Nursery",subjects:["Qaida","Hadith / Dua","Attendance / Character"],marks:[62,65,100],total:"227 / 300"},
-"N2502":{name:"AISHA MUDASIR",class:"Nursery",subjects:["Qaida","Hadith / Dua","Attendance / Character"],marks:[62,62,95],total:"219 / 300"},
-"N2503":{name:"ANAYA JAVID",class:"Nursery",subjects:["Qaida","Hadith / Dua","Attendance / Character"],marks:[59,68,100],total:"227 / 300"},
-"N2504":{name:"ABU TALHA",class:"Nursery",subjects:["Qaida","Hadith / Dua","Attendance / Character"],marks:[65,70,100],total:"235 / 300"},
-"N2505":{name:"ZEHRA ALTAF",class:"Nursery",subjects:["Qaida","Hadith / Dua","Attendance / Character"],marks:[65,90,100],total:"255 / 300"},
-"N2506":{name:"SAFWAN JAVID",class:"Nursery",subjects:["Qaida","Hadith / Dua","Attendance / Character"],marks:[55,65,85],total:"205 / 300"},
-"N2507":{name:"IRTIQA BASHARAT",class:"Nursery",subjects:["Qaida","Hadith / Dua","Attendance / Character"],marks:[79,89,95],total:"263 / 300"},
-"N2508":{name:"AAFAQ FAROOQ",class:"Nursery",subjects:["Qaida","Hadith / Dua","Attendance / Character"],marks:[90,95,100],total:"282 / 300"},
-"N2509":{name:"BUSHRA SHABIR",class:"Nursery",subjects:["Qaida","Hadith / Dua","Attendance / Character"],marks:[70,65,70],total:"205 / 300"},
-"N2510":{name:"KAMRAN",class:"Nursery",subjects:["Qaida","Hadith / Dua","Attendance / Character"],marks:[60,50,60],total:"170 / 300"},
-"N2511":{name:"DANISH MAJEED",class:"Nursery",subjects:["Qaida","Hadith / Dua","Attendance / Character"],marks:[90,95,92],total:"277 / 300"},
-"N2512":{name:"EHSAN RASHEED",class:"Nursery",subjects:["Qaida","Hadith / Dua","Attendance / Character"],marks:[95,98,99],total:"292 / 300"},
-"N2513":{name:"AAFAN IMTIYAZ",class:"Nursery",subjects:["Qaida","Hadith / Dua","Attendance / Character"],marks:[92,98,97],total:"287 / 300"},
-"N2514":{name:"ZIYAN JAVID",class:"Nursery",subjects:["Qaida","Hadith / Dua (1)","Hadith / Dua (2)","Attendance / Character"],marks:[90,95,85,80],total:"350 / 400"},
-"N2515":{name:"MUFEEDA MAJEED",class:"Nursery",subjects:["Qaida","Hadith / Dua (1)","Hadith / Dua (2)","Attendance / Character"],marks:[98,99,95,99],total:"391 / 400"},
-"N2516":{name:"TAWQEER YASEEN",class:"Nursery",subjects:["Qaida","Hadith / Dua","Attendance / Character"],marks:[96,90,100],total:"280 / 300"},
-"N2517":{name:"ADEEBA SHABIR",class:"Nursery",subjects:["Qaida","Hadith / Dua","Attendance / Character"],marks:[80,85,98],total:"263 / 300"},
-"N2518":{name:"ELHAAM MUDASIR",class:"Nursery",subjects:["Qaida","Hadith / Dua (1)","Hadith / Dua (2)","Attendance / Character"],marks:[100,95,97,98],total:"390 / 400"},
-"N2519":{name:"MUSADIQ BASHARAT",class:"Nursery",subjects:["Qaida","Hadith / Dua","Attendance / Character"],marks:[98,93,98],total:"289 / 300"},
-"N2520":{name:"MAJID ASHRAF",class:"Nursery",subjects:["Qaida","Hadith / Dua","Attendance / Character"],marks:[95,91,96],total:"282 / 300"}
-};
-
-function findResult(){
-  const roll=document.getElementById("roll").value.trim().toUpperCase();
-  const out=document.getElementById("output");
-  if(!results[roll]){
-    out.innerHTML="<p style='color:red'>❌ Result Not Found</p>";
-    return;
-  }
-  const r=results[roll];
-  let html=`<div class="card">
-  <b>Name:</b> ${r.name}<br>
-  <b>Class:</b> ${r.class}<br>
-  <b>Roll No:</b> ${roll}
-  <table><tr><th>Subject</th><th>Marks</th></tr>`;
-  for(let i=0;i<r.subjects.length;i++){
-    html+=`<tr><td>${r.subjects[i]}</td><td>${r.marks[i]}</td></tr>`;
-  }
-  html+=`<tr><th>Total</th><th>${r.total}</th></tr></table></div>`;
-  out.innerHTML=html;
-}
-</script>
-
-</body>
-</html>
-<!-- UNIVERSAL MOBILE RESULT FIX (ADD ONLY) -->
-<script>
-document.addEventListener("DOMContentLoaded", function () {
-
-  /* Auto-scroll to result section if roll number is submitted */
-  const buttons = document.querySelectorAll("button");
-  buttons.forEach(btn => {
-    btn.addEventListener("click", () => {
-      const result = document.querySelector("#result, #result-section, .result");
-      if (result) {
-        setTimeout(() => {
-          result.scrollIntoView({ behavior: "smooth" });
-        }, 300);
-      }
-    });
-  });
-
-  /* Mobile input safety for roll numbers */
-  document.querySelectorAll("input").forEach(input => {
-    if (input.type === "number") {
-      input.type = "text";
-      input.setAttribute("inputmode", "numeric");
-    }
-  });
-
-  /* Fallback message if JS partially fails on mobile */
-  window.onerror = function () {
-    alert("If result is not visible, please refresh once or use Chrome browser.");
-  };
-
-});
-</script>
-<!-- END FIX -->
+<!-- ONLINE STUDENT REGISTRATION FORM END -->
